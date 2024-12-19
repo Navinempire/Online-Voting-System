@@ -30,6 +30,7 @@ else{
         color: white;
         border-radius: 5px;
         float: left;
+        margin: 10px;
     }
     #logoutbtn{
         padding: 5px;
@@ -38,6 +39,7 @@ else{
         color: white;
         border-radius: 5px;
         float: right;
+        margin: 10px;
     }
     #Profile{
         background-color: white;
@@ -59,8 +61,9 @@ else{
         border-radius: 5px;
     }
     #mainSection{
-        padding: 5px;
+        padding: 10px;
     }
+    
 
 </style>
 <body>
