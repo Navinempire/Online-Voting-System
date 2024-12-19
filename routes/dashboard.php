@@ -57,7 +57,7 @@ $groupsdata = $_SESSION['groupsdata'] ;
     </center>
     <hr>
     <div id="Profile">
-        <center><img src="../uploads/ <?php echo $userdata['photo'] ?>" height="100" width="150"></center><br><br>
+        <center><img src="../uploads/ <?php echo $userdata['photo'] ?>" height="100" width="100"></center><br><br>
         <b>Name</b><?php echo $userdata['name']?><br><br>
         <b>Mobile</b><?php echo $userdata['mobile']?><br><br>
         <b>Address</b><?php echo $userdata['address']?><br><br>
@@ -66,7 +66,19 @@ $groupsdata = $_SESSION['groupsdata'] ;
     <div id="Group">
         <?php
         if(isset($_SESSION['groupdata'])){
-
+            for($i=0; $i<count($groupsdata);$i++){
+                ?>
+                <div>
+                    <img src="../uploads/<?php echo $groupsdata[$i]['photo']?>" height="=100" width="100">
+                    <b>Group Name:<?php echo $groupsdata[$i]['name']?></b><br>
+                    <b>Votes:<?php echo $groupsdata[$i]['votes']?></b><br>
+                    <form action="#">
+                        <input type="hidden" name="gvotes" value="">
+                        <input type="submit" name="votebtn" value="vote" id="votebtn">
+                    </form>
+                </div>
+                <?php
+            }
         }
         else{
         }
