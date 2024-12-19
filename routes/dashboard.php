@@ -7,7 +7,7 @@ if(isset($_SESSION['userdata'])){
 
 $userdata = $_SESSION['userdata'] ;
 $groupsdata = $_SESSION['groupsdata'] ;
-if(isset($_SESSION['status'])==0){
+if($_SESSION['userdata']['status']==0){
     $status = '<b style="color:red">Not Voted</b>';
 }
 else{
@@ -63,6 +63,14 @@ else{
     #mainSection{
         padding: 10px;
     }
+
+    #voted{
+        padding: 5px;
+        font-size: 15px;
+        background-color: #3498db;
+        color: white;
+        border-radius: 5px;
+    }
     
 
 </style>
@@ -70,15 +78,13 @@ else{
 <div id="mainSection">
     <center>
     <div id="headerSection">
-        <button id="backbtn">Back</button>
-        <button id="logoutbtn">LogOut</button>
+        <a href="../"><button id="backbtn">Back</button></a>
+        <a href="logout.php"><button id="logutbtn">logout</button>
         <h1>Online Voting System</h1>
     </div>
     </center>
     <hr>
     <div id="mainSection">
-
-    
     <div id="Profile">
         <center><img src="../uploads/ <?php echo $userdata['photo'] ?>" height="100" width="100"></center><br><br>
         <b>Name</b><?php echo $userdata['name']?><br><br>
@@ -98,7 +104,18 @@ else{
                     <form action="../api/vote.php" method="post">
                         <input type="hidden" name="gvotes" value="<?php echo $groupsdata[$i]['votes']?>">
                         <input type="hidden" name="gid" value="<?php echo $groupsdata[$i]['id']?>">
-                        <input type="submit" name="votebtn" value="vote" id="votebtn">
+                        <?php
+                        if($_SESSION['userdata']['status']==0){
+                            ?>
+                            <input type="submit" name="votebtn" value="vote" id="votebtn">
+                            <?php
+                        }
+                        else{
+                        ?>
+                        <button type="button"name="votebtn" value="vote" id="voted">voted</button>
+                        <?php
+                        }
+                    ?>
                     </form>
                 </div>
                 <?php
