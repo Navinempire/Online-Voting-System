@@ -14,6 +14,12 @@ if($update_votes and $update_votes_status){
     $groups = mysqli_query($connect,"SELECT * FROM user WHERE role=2");
     $_SESSION['userdata']['status']=1;
     $_SESSION['groupsdata']=$groupsdata;
+    echo'
+    <scropt>
+    alert("voting successfull");
+    window.location = "../routes/deshboard.php";
+    </script>
+    ';
 }
 else{
     echo'
