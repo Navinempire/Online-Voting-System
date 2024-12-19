@@ -1,0 +1,33 @@
+body{
+    text-align: center;
+    background-color: #b8e994;
+}
+#imagecss{
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 30%;
+}
+#headerSection{
+    padding: 5px;
+    
+}
+#headerScetion h1{
+    font-family: cursive;
+}
+input{
+    padding: 10px;
+    border-radius: 5px;
+}
+#dropbox{
+    padding: 10px;
+    border-radius: 5px;
+    width: 15%;
+}
+#loginbtn{
+    padding: 5px;
+    border-radius: 5px;
+    background-color:rgb(99, 99, 205);
+    color: white;
+    border-radius: 5px;
+}
