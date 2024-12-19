@@ -10,7 +10,7 @@ $check = mysqli_query($connect,"SELECT * FROM USER WHERE mobile='$mobile' AND pa
 if (mysqli_num_rows($check) > 0) {
     $userdata = mysqli_fetch_array($check);
     $groups = mysqli_query($connect,"SELECT * FROM user WHERE role=2");
-    $groupsdata = mysqli_fetch_all($groups,MYSQL_ASSOC);
+    $groupsdata = mysqli_fetch_all($groups,MYSQLI_ASSOC);
 
     $_SESSION['userdata'] = $userdata;
     $_SESSION['groupsdata'] = $groupsdata;
@@ -29,4 +29,5 @@ else {
     </script>
     ';
 }
+
 ?>
