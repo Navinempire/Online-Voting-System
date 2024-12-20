@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <?php
 session_start();
-if(isset($_SESSION['userdata'])){
+if(!isset($_SESSION['userdata'])){
     header("location: ../");
 }
 
 $userdata = $_SESSION['userdata'] ;
 $groupsdata = $_SESSION['groupsdata'] ;
+
 if($_SESSION['userdata']['status']==0){
     $status = '<b style="color:red">Not Voted</b>';
+    
 }
 else{
     $status = '<b style="color:red">Voted</b>';
 }
 ?>
-<!-- 
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -80,7 +82,7 @@ else{
     <center>
     <div id="headerSection">
         <a href="../"><button id="backbtn">Back</button></a>
-        <a href="logout.php"><button id="logutbtn">logout</button>
+        <a href="logout.php"><button id="logoutbtn">logout</button>
         <h1>Online Voting System</h1>
     </div>
     </center>
@@ -130,4 +132,4 @@ else{
 </div>
     
 </body>
-</html> -->
+</html>
