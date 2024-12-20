@@ -13,7 +13,7 @@ if($_SESSION['userdata']['status']==0){
     
 }
 else{
-    $status = '<b style="color:red">Voted</b>';
+    $status = '<b style="color:green">Voted</b>';
 }
 ?>
 
@@ -70,7 +70,7 @@ else{
     #voted{
         padding: 5px;
         font-size: 15px;
-        background-color: #3498db;
+        background-color: green;
         color: white;
         border-radius: 5px;
     }
@@ -82,7 +82,7 @@ else{
     <center>
     <div id="headerSection">
         <a href="../"><button id="backbtn">Back</button></a>
-        <a href="logout.php"><button id="logoutbtn">logout</button>
+        <a href="logout.php"><button id="logoutbtn">logout</button></a>
         <h1>Online Voting System</h1>
     </div>
     </center>
@@ -93,7 +93,7 @@ else{
         <b>Name: </b><?php echo $userdata['name']?><br><br>
         <b>Mobile: </b><?php echo $userdata['mobile']?><br><br>
         <b>Address: </b><?php echo $userdata['address']?><br><br>
-        <b>Status: </b><?php echo $userdata['status']?><br><br>
+        <b>Status: </b><?php echo $status?><br><br>
     </div>
     <div id="Group">
         <?php
@@ -115,7 +115,7 @@ else{
                         }
                         else{
                         ?>
-                        <button type="button"name="votebtn" value="vote" id="voted">voted</button>
+                        <button type="button" name="votebtn" value="vote" id="voted">voted</button>
                         <?php
                         }
                     ?>
