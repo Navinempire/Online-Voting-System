@@ -27,7 +27,7 @@ if (mysqli_num_rows($check) > 0) {
     
     echo '
     <script>
-        window.location.href = "../routes/dashboard.php";
+        window.location = "../routes/dashboard.php";
     </script>';
     
 }

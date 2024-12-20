@@ -14,6 +14,7 @@ else{
     $status = '<b style="color:red">Voted</b>';
 }
 ?>
+<!-- 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -129,4 +130,4 @@ else{
 </div>
     
 </body>
-</html>
+</html> -->
