@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <?php
 session_start();
-if(isset($_SESSION['userdata'])){
+if(!isset($_SESSION['userdata'])){
     header("location: ../");
 }
 
 $userdata = $_SESSION['userdata'] ;
 $groupsdata = $_SESSION['groupsdata'] ;
+
 if($_SESSION['userdata']['status']==0){
     $status = '<b style="color:red">Not Voted</b>';
+    
 }
 else{
-    $status = '<b style="color:red">Voted</b>';
+    $status = '<b style="color:green">Voted</b>';
 }
 ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -51,7 +54,7 @@ else{
         background-color: white;
         width: 60%;
         padding: 20px;
-        float: left;
+        float: right;
     }
     #votebtn{
         padding: 5px;
@@ -67,7 +70,7 @@ else{
     #voted{
         padding: 5px;
         font-size: 15px;
-        background-color: #3498db;
+        background-color: green;
         color: white;
         border-radius: 5px;
     }
@@ -79,22 +82,22 @@ else{
     <center>
     <div id="headerSection">
         <a href="../"><button id="backbtn">Back</button></a>
-        <a href="logout.php"><button id="logutbtn">logout</button>
+        <a href="logout.php"><button id="logoutbtn">logout</button></a>
         <h1>Online Voting System</h1>
     </div>
     </center>
     <hr>
     <div id="mainSection">
     <div id="Profile">
-        <center><img src="../uploads/ <?php echo $userdata['photo'] ?>" height="100" width="100"></center><br><br>
-        <b>Name</b><?php echo $userdata['name']?><br><br>
-        <b>Mobile</b><?php echo $userdata['mobile']?><br><br>
-        <b>Address</b><?php echo $userdata['address']?><br><br>
-        <b>Status</b><?php echo $userdata['status']?><br><br>
+        <center><img src="../uploads/<?php echo $userdata['photo'] ?>" height="200" width="200"></center><br><br>
+        <b>Name: </b><?php echo $userdata['name']?><br><br>
+        <b>Mobile: </b><?php echo $userdata['mobile']?><br><br>
+        <b>Address: </b><?php echo $userdata['address']?><br><br>
+        <b>Status: </b><?php echo $status?><br><br>
     </div>
     <div id="Group">
         <?php
-        if(isset($_SESSION['groupdata'])){
+        if(isset($_SESSION['groupsdata'])){
             for($i=0; $i<count($groupsdata);$i++){
                 ?>
                 <div>
@@ -112,7 +115,7 @@ else{
                         }
                         else{
                         ?>
-                        <button type="button"name="votebtn" value="vote" id="voted">voted</button>
+                        <button type="button" name="votebtn" value="vote" id="voted">voted</button>
                         <?php
                         }
                     ?>
