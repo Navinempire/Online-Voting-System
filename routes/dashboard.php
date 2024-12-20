@@ -54,7 +54,7 @@ else{
         background-color: white;
         width: 60%;
         padding: 20px;
-        float: left;
+        float: right;
     }
     #votebtn{
         padding: 5px;
@@ -89,15 +89,15 @@ else{
     <hr>
     <div id="mainSection">
     <div id="Profile">
-        <center><img src="../uploads/ <?php echo $userdata['photo'] ?>" height="100" width="100"></center><br><br>
-        <b>Name</b><?php echo $userdata['name']?><br><br>
-        <b>Mobile</b><?php echo $userdata['mobile']?><br><br>
-        <b>Address</b><?php echo $userdata['address']?><br><br>
-        <b>Status</b><?php echo $userdata['status']?><br><br>
+        <center><img src="../uploads/<?php echo $userdata['photo'] ?>" height="200" width="200"></center><br><br>
+        <b>Name: </b><?php echo $userdata['name']?><br><br>
+        <b>Mobile: </b><?php echo $userdata['mobile']?><br><br>
+        <b>Address: </b><?php echo $userdata['address']?><br><br>
+        <b>Status: </b><?php echo $userdata['status']?><br><br>
     </div>
     <div id="Group">
         <?php
-        if(isset($_SESSION['groupdata'])){
+        if(isset($_SESSION['groupsdata'])){
             for($i=0; $i<count($groupsdata);$i++){
                 ?>
                 <div>
